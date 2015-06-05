@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="228" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Pledge base" type="PledgeBase" />
+	<dword alias="Owner's view" type="YesOrNo" />
+	<dword alias="Owner pledge ID" type="Pledge">
+		<scriptAlias id="PIC_PLEDGE_ID" />
+	</dword>
+	<string alias="Owner pledge name">
+		<scriptAlias id="PIC_PLEDGE_NAME" />
+	</string>
+	<string alias="Owner pledge leader" />
+	<dword alias="Owner alliance ID" type="Alliance">
+		<scriptAlias id="AIC_ALLY_ID" />
+	</dword>
+	<string alias="Owner alliance name">
+		<scriptAlias id="AIC_ALLY_NAME" />
+	</string>
+	<dword alias="Current server time" type="SecondsSinceEpoch" />
+	<dword alias="Siege time" type="DeclaredSiegeTime" />
+
+	<dword alias="Possibility count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Possible siege time" type="SecondsSinceEpoch" />
+	</loop>
+</packet>

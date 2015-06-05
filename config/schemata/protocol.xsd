@@ -1,0 +1,104 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.l2jfree.com"
+	xmlns="http://www.l2jfree.com" elementFormDefault="qualified">
+
+	<xs:include schemaLocation="opcode.xsd" />
+
+	<xs:complexType name="versionType">
+		<xs:simpleContent>
+			<xs:extension base="xs:int">
+				<xs:attribute name="date" type="xs:date" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="simpleProtocolType">
+		<xs:sequence>
+			<xs:element name="version" type="versionType" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="alias" type="xs:token" use="required" />
+		<xs:attribute name="disabled" type="xs:boolean" use="optional" />
+	</xs:complexType>
+
+	<xs:element name="authProtocol">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="simpleProtocolType">
+					<xs:sequence>
+						<xs:element ref="definitions" minOccurs="0" maxOccurs="1" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="protocol">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="simpleProtocolType">
+					<xs:sequence>
+						<xs:element name="primary" type="constantList" />
+						<xs:element name="secondary">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="constantList">
+										<xs:attribute name="count" type="xs:unsignedInt" />
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="definitions" minOccurs="0" maxOccurs="1" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="definitions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="file" type="fileType" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="fileType">
+		<xs:simpleContent>
+			<xs:extension base="xs:token">
+				<xs:attribute name="directory" type="dirType" use="optional" />
+				<xs:attribute name="type" type="proxyType" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="dirType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="SETTINGS" />
+			<xs:enumeration value="WORKING" />
+			<xs:enumeration value="CURRENT" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="proxyType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="CLIENT" />
+			<xs:enumeration value="SERVER" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="constant" type="unsignedByteHexDec" />
+
+	<xs:complexType name="constantList">
+		<xs:sequence>
+			<xs:element ref="constant" minOccurs="0" maxOccurs="256" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="authProtocol" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="protocol" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

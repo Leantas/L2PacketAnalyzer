@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="220" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Affected skill count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Skill" type="Skill" />
+		<dword alias="Level" type="skill.SkillLevel" /> <!-- 0, please test if there are any special skills -->
+		<dword alias="Cooldown time" type="TimeRemaining" />
+		<dword alias="Remaining time" type="TimeRemaining" /> <!-- if actual value is 0 or less (can use immediately), then (00 + 36 89 41 00) -->
+	</loop>
+</packet>

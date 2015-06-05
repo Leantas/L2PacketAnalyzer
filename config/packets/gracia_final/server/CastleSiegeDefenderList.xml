@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="230" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Residence" type="PledgeBase" />
+	<dword alias="0" />
+	<dword alias="1" />
+	<dword alias="0" />
+	<dword alias="Defender count" id="index_0" />
+	<dword alias="Defender count (dupe)" />
+	<loop id="index_0">
+		<dword alias="Pledge ID" type="Pledge">
+			<scriptAlias id="PIC_PLEDGE_ID" />
+		</dword>
+		<string alias="Pledge name">
+			<scriptAlias id="PIC_PLEDGE_NAME" />
+		</string>
+		<string alias="Pledge leader name" />
+		<dword alias="Pledge crest ID" type="PledgeCrest">
+			<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+		</dword>
+		<dword alias="Registration time" type="SecondsSinceEpoch" />
+		<dword alias="Status" type="SiegeDefenderStatus" />
+		<dword alias="Alliance ID" type="Alliance">
+			<scriptAlias id="AIC_ALLY_ID" />
+		</dword>
+		<string alias="Alliance name">
+			<scriptAlias id="AIC_ALLY_NAME" />
+		</string>
+		<string alias="Alliance leader name" />
+		<dword alias="Alliance crest ID" type="AllianceCrest">
+			<scriptAlias id="AIC_ALLY_CREST_ID" />
+		</dword>
+	</loop>
+</packet>

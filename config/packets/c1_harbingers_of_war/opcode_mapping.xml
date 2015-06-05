@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="49" id="128" />
+		<packet opcodePrefix="6A" id="129" />
+		<packet opcodePrefix="7A" id="130" />
+		<packet opcodePrefix="98" id="132" />
+		<packet opcodePrefix="99" id="133" />
+		<packet opcodePrefix="9A" id="134" />
+		<packet opcodePrefix="9B" id="135" />
+		<packet opcodePrefix="9C" id="136" />
+		<packet opcodePrefix="9D" id="CM_REQ_SKILL_COOL_TIME" />
+		<packet opcodePrefix="9E" id="CM_REQ_PACKAGE_SENDABLE_ITEM_LIST" />
+		<packet opcodePrefix="9F" id="CM_REQ_PACKAGE_SEND" />
+		<packet opcodePrefix="A0" id="CM_REQ_BLOCK" />
+		<packet opcodePrefix="A1" id="CM_REQ_CASTLE_SIEGE_INFO" />
+		<packet opcodePrefix="A2" id="CM_REQ_CASTLE_SIEGE_ATTACKER_LIST" />
+		<packet opcodePrefix="A3" id="CM_REQ_CASTLE_SIEGE_DEFENDER_LIST" />
+		<packet opcodePrefix="A4" id="CM_REQ_JOIN_CASTLE_SIEGE" />
+		<packet opcodePrefix="A5" id="144" />
+		<packet opcodePrefix="A6" id="145" />
+		<packet opcodePrefix="A7" id="146" />
+		<packet opcodePrefix="A8" id="CM_NET_PING" />
+		<packet opcodePrefix="A9" id="147" />
+	</client>
+	<server>
+		<packet opcodePrefix="D5" id="215" />
+		<packet opcodePrefix="D6" id="216" />
+		<packet opcodePrefix="D7" id="217" />
+		<packet opcodePrefix="D8" id="218" />
+		<packet opcodePrefix="D9" id="219" />
+		<packet opcodePrefix="DA" id="220" />
+		<packet opcodePrefix="DB" id="SM_PACKAGE_TO_LIST" />
+		<packet opcodePrefix="DC" id="SM_PACKAGE_SENDABLE_LIST" />
+		<packet opcodePrefix="DD" id="223" />
+		<packet opcodePrefix="DE" id="224" />
+		<packet opcodePrefix="DF" id="225" />
+		<packet opcodePrefix="E0" id="226" />
+		<packet opcodePrefix="E1" id="227" />
+		<packet opcodePrefix="E2" id="228" />
+		<packet opcodePrefix="E3" id="229" />
+		<packet opcodePrefix="E4" id="230" />
+		<packet opcodePrefix="E5" id="SM_NICK_NAME_CHANGED" />
+		<packet opcodePrefix="E6" id="SM_PLEDGE_STATUS_CHANGED" />
+		<packet opcodePrefix="E7" id="SM_RELATION_CHANGED" />
+		<packet opcodePrefix="E8" id="234" />
+		<packet opcodePrefix="E9" id="235" />
+		<packet opcodePrefix="EA" id="SM_SET_SUMMON_REMAIN_TIME" />
+		<packet opcodePrefix="EB" id="237" />
+		<packet opcodePrefix="ED" id="239" />
+		<packet opcodePrefix="EC" id="SM_NET_PING" />
+	</server>
+</mapping>
